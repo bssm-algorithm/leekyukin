@@ -1,4 +1,4 @@
-package com.java.IO;
+package com.java.day01;
 
 public class Boj25083 {
     public static void main(String[] args) {

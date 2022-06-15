@@ -1,4 +1,4 @@
-package com.java.IF;
+package com.java.day01;
 
 import java.util.Scanner;
 

@@ -1,47 +1,36 @@
 package com.java.day04;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Boj11650 {
-    public static class Point {
-        int x;
-        int y;
-
-        public int getX() {
-            return x;
-        }
-
-        public int getY() {
-            return y;
-        }
-
-        Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
+
         int N = Integer.parseInt(bf.readLine());
 
-        ArrayList<Point> points = new ArrayList<>();
+        int[][] arr = new int[N][2];
+
         for(int i = 0; i < N; i++) {
-            String tmp = bf.readLine();
-            String[] positions = tmp.split(" ");
-            int x = Integer.parseInt(positions[0]);
-            int y = Integer.parseInt(positions[1]);
-            points.add(new Point(x, y));
+            StringTokenizer st = new StringTokenizer(bf.readLine());
+            arr[i][0] = Integer.parseInt(st.nextToken());
+            arr[i][1] = Integer.parseInt(st.nextToken());
         }
 
-        points.stream()
-                .sorted(Comparator.comparing(Point::getX))
-                .sorted(Comparator.comparing(Point::getY))
-                .forEach(p -> sb.append(p.getX()).append(' ').append(p.getY()).append('\n'));
+        Arrays.sort(arr, (arr1, arr2) -> {
+
+            if (arr1[0] == arr2[0])
+                return arr1[1] - arr2[1];
+            else
+                return arr1[0] - arr2[0];
+        });
+
+        for(int i = 0; i < arr.length; i++)
+            sb.append(arr[i][0]).append(' ').append(arr[i][1]).append('\n');
+
         System.out.println(sb);
     }
 }

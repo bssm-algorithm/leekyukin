@@ -1,18 +1,16 @@
 package com.java.day06;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Boj1541 {
     public static void main(String[] args) throws IOException, ScriptException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
-        ScriptEngine se = scriptEngineManager.getEngineByName("JavaScript");
         StringBuilder sb = new StringBuilder();
         String input = bf.readLine();
 
@@ -39,11 +37,30 @@ public class Boj1541 {
                 }
             }
         }
-        try {
-            System.out.println((int)se.eval(String.valueOf(sb+"")));
-        } catch (Exception e) {
-            System.out.println("이이잉");
-        }
 
+        int bracketCnt = 0;
+        for (int i = 0; i < sb.length(); i++)
+            if (sb.charAt(i) == '(') bracketCnt++;
+
+        int[] brackets = new int[bracketCnt];
+        List<Integer> bracketList = new ArrayList<>();
+        List<Character> signList = new ArrayList<>();
+
+
+        int in = 0;
+        int i = 0;
+       while(sb.charAt(in)=='\0') {
+           int l = 0, r = 0;
+           for(i = i; sb.charAt(i)=='+' || sb.charAt(i)=='-' || sb.charAt(i)=='('; i++)
+                l=i+1;
+           for(i = i; sb.charAt(i)=='+' || sb.charAt(i)=='-' || sb.charAt(i)==')'; i++)
+                r=i-1;
+           int str = Integer.parseInt(sb.substring(l,r));
+           bracketList.add(str);
+           in++;
+
+       }
+
+       bracketList.forEach(System.out::println);
     }
 }

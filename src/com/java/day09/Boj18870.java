@@ -45,7 +45,7 @@ public class Boj18870 {
                     sb.append(map.get(origin.get(i))).append(" ");
                 }
             }
-            
+
             System.out.println(sb);
      }
 }

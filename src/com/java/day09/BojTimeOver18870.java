@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Boj18870 {
+public class BojTimeOver18870 {
     static int inputInt(BufferedReader bf) throws IOException {
         return Integer.parseInt(bf.readLine());
     }

@@ -1,4 +1,4 @@
-package com.java.day12;
+package com.java.day12.stack;
 
 import java.util.EmptyStackException;
 

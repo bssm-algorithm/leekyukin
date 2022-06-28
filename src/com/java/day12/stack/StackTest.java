@@ -1,4 +1,4 @@
-package com.java.day12;
+package com.java.day12.stack;
 
 public class StackTest {
     public static void main(String[] args) {

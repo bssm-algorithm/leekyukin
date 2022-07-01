@@ -1,4 +1,4 @@
-package com.java.day15.linkedList;
+package com.java.day15.listImp;
 
 public class LinkedListTest {
     public static void main(String[] args) {

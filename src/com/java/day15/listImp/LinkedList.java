@@ -1,4 +1,4 @@
-package com.java.day15.linkedList;
+package com.java.day15.listImp;
 
 public class LinkedList<T> {
     private int size = 0;

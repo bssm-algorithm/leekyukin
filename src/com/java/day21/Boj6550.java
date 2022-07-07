@@ -1,4 +1,4 @@
-package com.java;
+package com.java.day21;
 
 import com.java.day04.StringTokenizerTest;
 
